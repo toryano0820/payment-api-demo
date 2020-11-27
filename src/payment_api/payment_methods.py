@@ -8,17 +8,7 @@ import random
 
 
 class PaymentMethod:
-    @staticmethod
-    def from_kwargs(**kwargs):
-        if kwargs['PaymentMethod'] == 'credit_card':
-            return CreditCard(
-                kwargs['CreditCardNumber'],
-                kwargs['CardHolder'],
-                utils.parse_datetime(kwargs['ExpirationDate']),
-                kwargs.get('SecurityCode')
-            )
-        else:
-            return OtherPaymentMethod()
+    pass
 
 
 class OtherPaymentMethod(PaymentMethod):
@@ -26,7 +16,6 @@ class OtherPaymentMethod(PaymentMethod):
 
 
 class CreditCard(PaymentMethod):
-
     @staticmethod
     def is_valid(card_number: str):
         return bool(
@@ -60,3 +49,15 @@ class CreditCard(PaymentMethod):
 
     def verify(self):
         return True  # dummy verifcation, 25% verification failure
+
+
+def get_from_kwargs(**kwargs):
+    if kwargs['PaymentMethod'] == 'credit_card':
+        return CreditCard(
+            kwargs['CreditCardNumber'],
+            kwargs['CardHolder'],
+            utils.parse_datetime(kwargs['ExpirationDate']),
+            kwargs.get('SecurityCode')
+        )
+    else:
+        return OtherPaymentMethod()

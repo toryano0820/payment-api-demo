@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from payment_methods import PaymentMethod
+from payment_methods import get_from_kwargs as get_payment_method
 from payment_gateways import process_payment
 from datetime import datetime
 import traceback
@@ -13,7 +13,7 @@ def api_process_payment():
     try:
         params = request.json
         amount = params.pop('Amount')
-        payment_method = PaymentMethod.from_kwargs(**params)
+        payment_method = get_payment_method(**params)
 
         return jsonify({
             'message': process_payment(amount, payment_method)
