@@ -21,7 +21,7 @@ def test_invalid_content_type(client):
     r = client.post('ProcessPayment', data={
         'PaymentMethod': 'paypal',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'Amount': 19.0
     })
@@ -37,7 +37,7 @@ def test_unsupported_payment_method(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'paypal',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'Amount': 19.0
     })
@@ -49,7 +49,7 @@ def test_invalid_credit_card_number(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '000000000000',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'Amount': 19.0
     })
@@ -73,7 +73,7 @@ def test_invalid_credit_card_expiration_date(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '00:00:00',
         'Amount': 19.0
     })
@@ -85,7 +85,7 @@ def test_invalid_credit_card_security_code(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'SecurityCode': '0000',
         'Amount': 19.0
@@ -98,7 +98,7 @@ def test_expired_credit_card(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2020-01-31T00:00:00Z',
         'Amount': 19.0
     })
@@ -110,7 +110,7 @@ def test_invalid_amount(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'Amount': 0.0
     })
@@ -122,7 +122,7 @@ def test_valid_request_with_security_code(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'SecurityCode': '000',
         'Amount': 100.0
@@ -136,7 +136,7 @@ def test_cheap_payment_gateway(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'Amount': 19.0
     })
@@ -149,7 +149,7 @@ def test_expensive_payment_gateway(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'Amount': 100.0
     })
@@ -162,7 +162,7 @@ def test_premium_gateway(client):
     r = client.post('ProcessPayment', json={
         'PaymentMethod': 'credit_card',
         'CreditCardNumber': '5500000000000004',
-        'CardHolder': 'Victor Macasaet',
+        'CardHolder': 'dummy user',
         'ExpirationDate': '2022-01-31T00:00:00Z',
         'Amount': 501.0
     })
