@@ -17,7 +17,7 @@ ___
 ```
 {
     "PaymentMethod":    "<string>",   // currently, "credit_card" is only allowed
-    "CreditCardNumber": "<strimg>",   // accepts any valid credit card number
+    "CreditCardNumber": "<string>",   // accepts any valid credit card number
     "CardHolder":       "<string>",   // cannot be empty
     "ExpirationDate":   "<datetime>", // "yyyy-MM-ddTHH:mm:ss.fffZ", "yyyy-MM-ddTHH:mm:ssZ", "yyyy-MM-dd", "MM/yy", "MM-yy", or "MMyy"
     "SecurityCode":     "<string>",   // 3 digit security code, optional
