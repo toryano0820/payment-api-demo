@@ -48,7 +48,7 @@ class CreditCard(PaymentMethod):
             raise CreditCardVerificationFailed()
 
     def verify(self):
-        return True  # dummy verifcation, 25% verification failure
+        return True  # dummy verifcation, always pass
 
 
 def get_from_kwargs(**kwargs):
