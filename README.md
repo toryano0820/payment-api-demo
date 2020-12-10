@@ -1,12 +1,11 @@
 **<h1>Payment API</h1>**
 
 **<h2>Installing dependencies</h2>**
-- For API, execute **`pip install flask`**
-- For testing, execute **`pip install flask pytest`**
+- execute **`pip install -r requirements.txt`**
 
 ___
 **<h2>Starting API</h2>**
-- execute **`python src/payment_api/app.py`**
+- execute **`python src/app.py`**
 
 ___
 **<h2>Request Specs</h2>**
@@ -26,4 +25,4 @@ ___
 ```
 ___
 **<h2>Testing</h2>**
-- execute **`pytest -v`**
+- execute **`pytest -v src\app.py ..`**

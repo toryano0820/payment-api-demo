@@ -1,9 +1,4 @@
-
-import os
 import pytest
-import sys
-
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src/payment_api'))
 
 from app import app
 from errors import UnsupportedPaymentMethod, InvalidCreditCardExpirationDate, \

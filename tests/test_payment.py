@@ -1,10 +1,6 @@
 
-import os
 import pytest
-import sys
 from datetime import datetime
-
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src/payment_api'))
 
 from errors import InvalidAmount, PaymentGatewayUnavailable, UnsupportedPaymentMethod
 from payment_methods import CreditCard, OtherPaymentMethod

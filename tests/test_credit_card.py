@@ -1,10 +1,6 @@
 
-import os
 import pytest
-import sys
-from datetime import datetime, timedelta
-
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src/payment_api'))
+from datetime import datetime
 
 from errors import InvalidCreditCardExpirationDate, \
     InvalidCreditCardHolder, InvalidCreditCardNumber, InvalidCreditCardSecurityCode, \
